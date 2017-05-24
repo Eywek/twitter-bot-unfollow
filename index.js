@@ -35,7 +35,7 @@ let followersList = [] // list of followers ids
 let unfollowers = []
 
 setInterval(() => {
-  console.log('[' + new Date() + '] Check unfollowers... (Followers count: ' + followersList.length + ')')
+  console.log('[' + new Date() + '] Check unfollowers... (Last followers count: ' + followersList.length + ')')
   getFollowers((err, followers) => {
     if (err) return console.error(err)
     unfollowers = [] // reset unfollowers
@@ -66,7 +66,7 @@ setInterval(() => {
           screen_name: config.twitter.user.screen_name,
           text: unfollowers.map((user) => {
             return user.name + ' (@' + user.screen_name + ')'
-          }).join(', ') + ' vous ont unfollow.'
+          }).join(', ') + ' vous '+((unfollowers.length > 1)?'ont':'a')+' unfollow.'
         }, (err) => {
           if (err)
             console.error(err)
@@ -74,4 +74,4 @@ setInterval(() => {
       }
     }
   }, undefined, [])
-}, 15 * 60 * 1000) // each 15 minutes
+},  15 * 1000) // each 15 minutes

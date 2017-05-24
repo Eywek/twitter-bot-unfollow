@@ -7,6 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eywek <contact@eywek.fr>",
+  "contributors": [
+    {
+      "name": "Zao Soula (zarque)",
+      "email": "contact@zaosoula.fr",
+      "web": "https://zaosoula.fr"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
     "twitter": "^1.7.0",
