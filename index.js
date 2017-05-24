@@ -74,4 +74,4 @@ setInterval(() => {
       }
     }
   }, undefined, [])
-},  15 * 1000) // each 15 minutes
+},  15 * 60 * 1000) // each 15 minutes
